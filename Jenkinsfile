@@ -22,8 +22,8 @@ pipeline {
     stage('deploy') {
             steps {
                 sh "echo 'Deploying....'"
-                sh "kubectl set image deployment/backend -n=default front-static=youssifmoustafa/docker:back-1.${env.BUILD_NUMBER}"
-                sh "kubectl set image deployment/frontend -n=default front-static=youssifmoustafa/docker:front-1.${env.BUILD_NUMBER}"
+                sh "kubectl set image deployment/backend -n=default backend=youssifmoustafa/docker:back-1.${env.BUILD_NUMBER}"
+                sh "kubectl set image deployment/frontend -n=default frontend=youssifmoustafa/docker:front-1.${env.BUILD_NUMBER}"
             }
         }
     }
